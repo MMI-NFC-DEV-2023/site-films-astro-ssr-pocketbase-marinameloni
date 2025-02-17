@@ -1,0 +1,17 @@
+---
+import { pb } from "../../backend";
+
+export const prerender = false;
+
+let personnes = [];
+
+try {
+  personnes = await pb.collection("Personnes").getFullList();
+} catch (error) {
+  console.error("Failed to fetch personnes:", error);
+}
+---
+
+<pre>
+    {JSON.stringify(personnes, null, 2)}
+</pre>
