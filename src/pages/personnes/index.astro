@@ -1,4 +1,5 @@
 ---
+import { Debug } from "astro:components";
 import { pb } from "../../backend";
 import Layout from "../../layouts/Layout.astro"; 
 
@@ -14,6 +15,8 @@ try {
 ---
 
 <Layout />
-<pre>
+<!-- <pre>
     {JSON.stringify(personnes, null, 2)}
-</pre>
+</pre> -->
+
+<Debug {personnes}/>
