@@ -1,5 +1,6 @@
 ---
 import { pb } from "../../backend";
+import Layout from "../../layouts/Layout.astro"; 
 
 export const prerender = false;
 
@@ -12,6 +13,7 @@ try {
 }
 ---
 
+<Layout />
 <pre>
     {JSON.stringify(personnes, null, 2)}
 </pre>
