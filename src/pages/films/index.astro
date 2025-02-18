@@ -1,0 +1,11 @@
+---
+import { Debug } from "astro:components";
+import Layout from "../../layouts/Layout.astro";
+
+export const prerender = false;
+
+const films = await Astro.locals.pb.collection("films").getFullList();
+---
+<Layout />
+<pre>{JSON.stringify(films, null, 2)}</pre>
+<Debug {films} />
