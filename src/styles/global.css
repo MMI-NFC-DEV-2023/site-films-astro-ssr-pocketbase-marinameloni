@@ -1,2 +1,9 @@
 @import "tailwindcss";
 @plugin '@tailwindcss/typography';
+
+body {
+  @apply dark:bg-gray-800 font-sans antialiased;
+}
+h1, h2, h3, h4, h5, h6 {
+  @apply font-bold text-white;
+}
