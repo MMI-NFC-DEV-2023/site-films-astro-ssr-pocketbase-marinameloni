@@ -1,9 +1,10 @@
-import type { TypedPocketBase } from "./pocketbase-typegen";
+import type { TypedPocketBase, UsersResponse } from "./pocketbase-typegen";
 
 declare global {
     namespace App {
         interface Locals {
-            pb: TypedPocketBase
+            pb: TypedPocketBase;
+            user?: UsersResponse;
     }
 }
 }
