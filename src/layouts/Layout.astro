@@ -1,0 +1,28 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  pageTitle: string;
+}
+const { pageTitle } = Astro.props;
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+  </head>
+  <body class="bg-gray-100 text-gray-900">
+    <nav class="bg-blue-500 p-4 text-white">
+      <a href="/" class="mr-4 hover:underline">Accueil</a>
+      <a href="/personne" class="mr-4 hover:underline">Liste des personnes</a>
+      <a href="/film" class="mr-4 hover:underline">Liste des films</a>
+      <a href="/auth-password" class="hover:underline">Authentification</a>
+    </nav>
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,18 @@
+---
+import { Debug } from "astro:components";
+import Layout from "../../layouts/Layout.astro";
+import type {
+  FilmsResponse,
+  PersonneResponse,
+  RolesResponse,
+} from "../../pocketbase-typegen";
+import LinkFilm from "../../components/LinkFilm.astro";
+export const prerender = false;
+
+const listFilms = await Astro.locals.pb.collection("films").getFullList();
+---
+
+<Layout pageTitle="Liste des personnes">
+  {listFilms.map((film) => <LinkFilm {...film} />)}
+  <!-- <Debug {listFilms} /> -->
+</Layout>
